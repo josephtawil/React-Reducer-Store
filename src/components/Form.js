@@ -9,7 +9,7 @@ const Form = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(inputRef.current);
+        console.log(inputRef.current.value);
     }
 
     return (
@@ -24,3 +24,5 @@ const Form = () => {
         </div>
     )
 };
+
+export default Form;

@@ -1,13 +1,13 @@
 import React, { createContext, useReducer, useContext } from "react";
-​
+
 const TodoContext = createContext({
   id: "",
   name: "",
   priority: false,
 });
-​
+
 const { Provider } = TodoContext;
-​
+
 function reducer(state, action) {
   switch (action.type) {
     case "add":
@@ -33,15 +33,15 @@ function reducer(state, action) {
       return state;
   }
 }
-​
+
 function TodoProvider({ ...props }) {
-  const [state, dispatch] = useReducer(reducer, []);
-​
+const [state, dispatch] = useReducer(reducer, []);
+
   return <Provider value={[state, dispatch]} {...props} />;
 }
-​
+
 function useTodoContext() {
   return useContext(TodoContext);
 }
-​
+
 export { TodoProvider, useTodoContext };
